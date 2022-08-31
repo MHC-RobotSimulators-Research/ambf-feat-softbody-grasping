@@ -1,0 +1,68 @@
+bodies: []
+joints: []
+sensors: [SENSOR Proximity0_L]
+actuators: [ACTUATOR Constraint0_L, ACTUATOR Constraint1_L, ACTUATOR Constraint2_L, ACTUATOR Constraint3_L]
+high resolution path: ../
+low resolution path: ../
+ignore inter-collision: true
+namespace: /ambf/env/
+
+# We can create an anchor in YAML that can be later used as an alias in the rest
+# of this file
+parent: &default_parent wrist_L # This is the name of the 7th link in the KUKA robot. (Only part of the name is sufficient)
+
+SENSOR Proximity0_L:
+  name: tip_sensor_array_L
+  type: Proximity
+  location:
+    orientation: {p: 0.0, r: 0.0, y: 0.0}
+    position: {x: 0.0, y: 0.0, z: 0.04}
+  array:
+    -
+      offset: {x: 0.0, y: 0.025, z: 0.0}
+      direction: {x: 0.0, y: 0.0, z: 1.0}
+    -
+      offset: {x: 0.0, y: -0.025, z: 0.0}
+      direction: {x: 0.0, y: 0.0, z: 1.0}
+    -
+      offset: {x: 0.025, y: 0.0, z: 0.0}
+      direction: {x: 0.0, y: 0.0, z: 1.0}
+    -
+      offset: {x: -0.025, y: 0.0, z: 0.0}
+      direction: {x: 0.0, y: 0.0, z: 1.0}
+  range: 0.1
+  parent: *default_parent
+  visible: True
+  visible size: 0.01
+
+ACTUATOR Constraint0_L:
+  name: tip_actuator0_L
+  type: Constraint
+  location:
+    orientation: {p: 0.0, r: 0.0, y: 0.0}
+    position: {x: 0.0, y: 0.025, z: 0.04}
+  parent: *default_parent
+
+ACTUATOR Constraint1_L:
+  name: tip_actuator1_L
+  type: Constraint
+  location:
+    orientation: {p: 0.0, r: 0.0, y: 0.0}
+    position: {x: 0.0, y: -0.025, z: 0.04}
+  parent: *default_parent
+
+ACTUATOR Constraint2_L:
+  name: tip_actuator2_L
+  type: Constraint
+  location:
+    orientation: {p: 0.0, r: 0.0, y: 0.0}
+    position: {x: 0.025, y: 0.0, z: 0.04}
+  parent: *default_parent
+
+ACTUATOR Constraint3_L:
+  name: tip_actuator3_L
+  type: Constraint
+  location:
+    orientation: {p: 0.0, r: 0.0, y: 0.0}
+    position: {x: -0.025, y: 0.0, z: 0.04}
+  parent: *default_parent
