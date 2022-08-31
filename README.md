@@ -1,3 +1,31 @@
+# Quick Run guide: - Tissue Palpation Example: 
+
+Author: [Melody Su](https://github.com/MHC-RobotSimulators-Research/ambf-feat-softbody-grasping/edit/feat-softbody-grasping/README.md) (msu@mtholyoke.edu)
+
+          Terminal One:     roscore
+
+          Terminal Two:     cd ~/Simulator/ambf-feat-softbody-grasping/bin/lin-x86_64
+                            ./ambf_simulator --launch_file ../../ambf_ros_modules/examples/tissue_palpation_example/launch.yaml -l 0,1,2,3,4
+
+          Terminal Three:   cd ~/Simulator/ambf-feat-softbody-grasping/ambf_ros_modules/examples/object_control_example
+                            python control_object.py -o /ambf/env/raven_2/base_link_L -a raven_L
+
+          Terminal Four:    cd ~/Simulator/ambf-feat-softbody-grasping/ambf_ros_modules/examples/object_control_example
+                            python control_object.py -o /ambf/env/raven_2/base_link_R -a raven_R
+
+          Terminal Five:    cd ~/Simulator/ambf-feat-softbody-grasping/ambf_ros_modules/examples/tissue_palpation_example
+                            python sensing_and_grasping.py
+
+Note: 
+      
+- Remember to build the code (see instructions below) first before running the example.
+      
+- If it complains about rostopic types, try to source again: source ~/Simulator/ambf-feat-softbody-grasping/build/devel/setup.bash
+
+- Change the directory "~/Simulator/ambf-feat-softbody-grasping" according to where you downloaded the code.
+
+
+
 # Asynchronous Multi-Body Framework (AMBF)
 
 Author: [Adnan Munawar](https://github.com/adnanmunawar) (amunawar@wpi.edu)
