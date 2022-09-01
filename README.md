@@ -24,7 +24,7 @@ Note:
 
 - Change the directory "~/Simulator/ambf-feat-softbody-grasping" according to where you downloaded the code.
 
-
+Here is a [demo video](https://youtu.be/9R7WQYomq7A) of the softbody grasping example and another [demo video](https://youtu.be/9d5OvI4OXgM) showing our custom Raven + soft tissue version.
 
 # Asynchronous Multi-Body Framework (AMBF)
 
